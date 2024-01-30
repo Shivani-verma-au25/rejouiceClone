@@ -1,3 +1,4 @@
+// Locomotive smoothScrolling Effect
 function loco(){
     gsap.registerPlugin(ScrollTrigger);
   
@@ -30,8 +31,7 @@ function loco(){
   }
   loco()
 
-
-
+// page1 curser effect 
 function cursorEffect(){
     
 let cursor = document.querySelector(".cursor")
@@ -59,3 +59,61 @@ page1Conent.addEventListener("mouseleave",function(dets){
 })
 }
 cursorEffect()
+
+// page2 animation
+function scrollEffect(){
+  
+  gsap.from(".top",{
+    y:50,
+    duration:1,
+    stagger:.1,
+    opacity:0,
+    scrollTrigger:{
+      trigger:".top",
+      scroller:"#main",
+      // markers:true,
+      scrub:2,
+      start:"30% 50%",
+      end:"35% 55%"
+    }
+  })
+
+  gsap.from(".bottom",{
+    y:100,
+    duration:2,
+    stagger:.25,
+    opacity:1,
+    scrollTrigger:{
+      trigger:".bottom",
+      scroller:"#main",
+      // markers:true,
+      start:"0% 50% ",
+      end: "80% 90%"
+    }
+  })
+}
+scrollEffect()
+
+// page3 animation
+
+
+
+
+
+// swiper
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
