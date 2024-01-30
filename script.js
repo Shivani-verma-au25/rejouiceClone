@@ -94,26 +94,83 @@ function scrollEffect(){
 }
 scrollEffect()
 
-// page3 animation
+// page3 bottom animation
 
+function textsliding(){
+  gsap.to(".b-elem h1",{
+    scrollTrigger:{
+      trigger:'.b-elem h1',
+      scroller:"#main",
+      scrub:1,
+      // markers:true,
+      start:"top 90%",
+      end:"top 90%"
+    },
+    top:0,
+    duration:1
+  })
+}
+textsliding()
 
-
-
+function line(){
+  gsap.to(".line",{
+    width:"95%",
+    duration:1,
+    scrollTrigger:{
+      trigger:".line",
+      scroller:"#main",
+      scrub:1,
+      start:"top 50%",
+      end:"top 50%",
+      // markers:true
+    }
+  })
+}
+line()
 
 // swiper
+function infanitSlider(){
   var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 30,
-    centeredSlides: true,
+    slidersPerView: 1,
+    spaceBetwwn:30,
+    loop:true,
     autoplay: {
       delay: 2500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      disableOnInteraction: true,
     },
   });
+}
+infanitSlider()
+
+// loader
+function loader(){
+  let tl1 = gsap.timeline()
+tl1.from(".loader h3",{
+  x:100,
+  opacity:0,
+  duration:1,
+  stagger:0.1
+})
+tl1.from(".loader h3",{
+  opacity:0,
+  x:-100,
+  stagger:0.1,
+  duration:1
+})
+tl1.to(".loader",{
+  opacity:0
+})
+tl1.from(".page1-content h1 span",{
+  y:100,
+  opacity:0,
+  stagger:0.1,
+  duration:0.5,
+  delay:-0.3
+})
+tl1.to(".loader",{
+  display:"none"
+  
+})
+
+}
+loader()

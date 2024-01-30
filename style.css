@@ -16,7 +16,22 @@ html,body{
     width: 100%;
     height: 100%;
 }
-
+.loader{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #000;
+    z-index: 99;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5vw;
+}
+.loader h3{
+    font-size: 2vw;
+}
 /* ********* page1 ********** */
 .cursor{
     width: 9vw;
@@ -74,6 +89,7 @@ nav h1{
     line-height: 27vw;
 }
 .page1-content>h1>span{
+    display: inline-block;
     font-family: rj;
 }
 
@@ -82,6 +98,12 @@ nav h1{
     width: 100%;
     height: 100vh;
     /* background-color: blueviolet; */
+}
+.line{
+    width: 50%;
+    height: 0.1vw;
+    background-color: #000;
+    margin-left:2%;
 }
 .top{
     width: 100%;
@@ -94,7 +116,7 @@ nav h1{
 }
 .top>.para{
     padding-bottom: 1vw;
-    border-bottom: .1vw solid #000;
+    /* border-bottom: .1vw solid #000; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -102,16 +124,27 @@ nav h1{
 }
 .bottom{
     width: 100%;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     padding-inline: 3vw;
     padding-block: 2vw;
+    /* overflow: hidden; */
+    position: relative;
 }
-.bottom>h1{
-    font-size: 4.2vw;
+.b-elem>h1{
+    font-size: 4.3vw;
     font-weight: 100;
     line-height: 1;
+    position: absolute;
+    top: 3.3vw;
+}
+.b-elem{
+    height: 5vw;
+    background-color: aqua;
+    margin: .2vw 0;
+    position: relative;
+    overflow: hidden;
 }
 
 /* ********** page3 ************ */
@@ -217,34 +250,32 @@ nav h1{
     font-size: 10vw;
     font-weight: 100;
     border-bottom: .1vw solid #000;
-    background-color: rebeccapurple;
     width: 96%;
     margin-left: 2%;
 }
 .swiper-div{
     width: 100%;
     height: 60vh;
-    background-color: yellow;
     position: relative;
+    margin-top: -2%;
 }
 .swiper {
-    width: 100%;
+    width: 110%;
     height: 100%;
   }
 
   .swiper-slide {
-    /* width: 400px !important; */
     text-align: center;
     font-size: 18px;
-    background: #740b0b;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    gap: 1vw;
   }
 
   .swiper-slide img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 20%;
     object-fit: cover;
+    object-position: center;
   }
