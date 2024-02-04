@@ -158,11 +158,10 @@ nav h1{
     flex-direction: column;
 }
 .page3-top{
+    width: 50%;
     text-align: center;
-    background-color: rebeccapurple;
-    width: fit-content;    
+    position: relative;
 }
-
 .page3-top>h4{
     margin-bottom: 1vw;
     font-size: 1.3vw;
@@ -175,21 +174,27 @@ nav h1{
     color: #fff;
     border-radius: 1vw;
     padding: .3vw .5vw;
+    position: relative;
 }
 .p3-top{
     width: 100%;
     height: 100%;
-    background-color: aqua;
     font-size: 3vw;
     font-family:nb;
     font-weight: 100;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .page3-top>.p3-top h2{
     font-size: 4vw;
     font-weight: 100;
-    position: relative;
+    width: fit-content;
 }
-.page3-top>.p3-top h2::before{
+.page3-top .p3-top ::after{
     content: "";
     width: 100%;
     height: .2vw;
@@ -197,10 +202,40 @@ nav h1{
     position: absolute;
     bottom: 0;
     left: 0;
+   
 }
-/* .page3-top>:hover::after{
-    width: 50%;
-} */
+.page3-top :hover::after{
+    animation: move2;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+    
+}
+@keyframes move2 {
+    0%{
+        width:30%
+    }
+    50%{
+        width: 50%;
+        background-color: #fff;
+    }
+    100%{
+        width: 100%;
+    }
+    
+}
+.heading{
+    width: 100%;
+    height: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:absolute ;
+    top: 30%;
+    padding-inline: 3vw;
+}
+.heading p{
+    font-size: 1.5vw;
+}
 
 .page3-elem{
     height: 80vh;
@@ -252,7 +287,7 @@ nav h1{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #000;
+    /* background-color: #000; */
 }
 .page5 .cursor1{
     width: 8vw;
@@ -263,6 +298,8 @@ nav h1{
     position: fixed;
 }
 .page5>video{
+    height: 100%;
+    width: 57%;
     object-fit: cover;
     object-position: center;
 }
@@ -270,7 +307,15 @@ nav h1{
     position: absolute;
     height: 70%;
 }
-
+.text-p5{
+    position: absolute;
+}
+.text-p5{
+    font-size: 1.5vw;
+    color: #fff;
+    font-weight: 100;
+    margin-left: 4vw;
+}
 /* ********* page6********* */
 .page6{
     width: 100%;
@@ -598,4 +643,190 @@ nav h1{
     display: inline-block;
     font-family: rj;
     color: #fff;
+}
+
+
+/* media queries */
+
+@media (max-width:415px) {
+    .page2>.top {
+        font-size: 3.4vw;
+        height: 10%;
+    } 
+    .b-elem {
+        width: 100%;
+        height: 15vw;
+    }
+    .b-elem>h1 {
+        font-size: 7.3vw;
+        text-align: center;
+    }
+    .page3-top {
+        width: 100%;       
+        height: 43%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 8vw;
+    }
+    .page3-top>h4 {
+        font-size: 5.3vw;
+    }
+    .page3-top>.p3-top h2 {
+        font-size: 12vw;
+    }
+    .page3-top .p3-top ::after {
+        display: none; 
+    }
+    .page3-top>h4>span {
+        font-size: 3.9vw;
+        padding: 1.3vw 1.5vw;
+        border-radius: 3vw;
+    }
+    .heading p {
+        font-size: 3.5vw;
+    }
+    .page3-elem {
+        height: 43vh;
+    }
+    .heading{
+        top: 44%;
+    }
+    .page3-elem {
+        width: 100%;
+        display: inline;
+        white-space: nowrap;
+        height: 45vh;
+        overflow-y: scroll;
+    }
+    .page3-elem>.elem {
+        display: inline;
+        overflow: hidden;
+       
+    }
+    .page4{
+        height: 100%;
+    }
+    .page4 .top {
+        width: 100%;
+        /* background-color: yellow; */
+        font-size: 3.9vw;
+    }
+    .b-elem>h1 {
+        font-size: 7.3vw;
+        text-align: start;
+    }
+    .page5 {
+        height: 70vh;
+    }
+    .page5>video {
+        height: 80%;
+        width: 100%;
+    }
+    .page5>svg {
+        position: absolute;
+        height: 56%;
+    }
+    .text-p5 {
+        font-size: 3.5vw;
+    }
+    .swiper-wrapper{
+        height:60%;
+    }
+    .top-p6 h1 {
+        font-size: 20vw;
+        font-family: rj;
+    }
+    .p-7-top {
+        font-size: 3.9vw;
+    }
+    .b-elemp7 {
+        height: 13vw;
+    }
+    .b-elemp7>h1 {
+        font-size: 6.3vw;
+    }
+    .page7 {
+        width: 100%;
+        height: 40vh;
+    }
+    
+    .inner-top-text p {
+        font-size: 4vw;
+        font-weight: 100;
+    }
+    .inner-top-text {
+        height: 40vw;
+    }
+    .inner-top-text h1 {
+        font-size: 8vw;
+        text-align: center;
+    }
+    .inner-top-text h1::after{
+        display: none;
+    }
+    .bottom-text {
+        width: 100%;
+        height: 44vh;
+    }
+    .upper {
+        width: 100%;
+        height: 100%;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .lower {
+        display: none;
+    }
+    .down{
+        display: none;
+    }
+    .r-down{
+        display: none;
+    }
+    .l-upper p {
+        margin-top: 10vw;
+        font-size: 5.6vw;
+    }
+    .l-upper button {
+        margin-block: 4vw;
+        font-size: 5.3vw;
+    }
+    .l-upper button {
+        font-size: 5vw;
+        font-weight: 100;
+        padding: 2.3vw;
+        border-radius: 5vw;
+    }
+    .right {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .items {
+        width: 100%;
+    }   
+    .ip1 {
+        gap: 3vw;
+        margin-inline: 2vw;
+    }
+    .i-p2 {
+        gap: 3vw;
+        margin-block: 2vw;
+    }
+    .cursor{
+        display: none;
+    }
+    .page2 {
+        height: 64vh;
+    }
+    .loader h3 {
+        font-size: 6vw;
+    }
+
 }

@@ -90,10 +90,6 @@ page1Conent.addEventListener("mouseleave",function(dets){
 cursorEffect()
 
 
-
-
-  
-
 // page2 animation
 function scrollEffect(){
   
@@ -128,8 +124,22 @@ function scrollEffect(){
 }
 scrollEffect()
 
-// page3 bottom animation
 
+// page3 
+gsap.from(".p3-top h2",{
+  y:30,
+  duration:1,
+  stagger:0.25,
+  scrollTrigger:{
+    trigger:".p3-top h2",
+    scroller:"#main",
+    scrub:3,
+    start:" 80% 90%",
+    end:"80% 90%"
+  }
+})
+
+// page3 bottom animation
 function textsliding(){
   gsap.to(".b-elem h1",{
     scrollTrigger:{
@@ -197,19 +207,19 @@ function line2(){
 line2()
 
 
-// gsap.from(".page4 .top ",{
-//     y:100,
-//     duration:1,
-//     stagger:0.2,
-//     scrollTrigger:{
-//       trigger:'.page4 .top ',
-//       scroller:'#main',
-//       markers:true,
-//       start:"50% 90%",
-//       end:"50%  90%",
-//       scrub:2
-//     }
-// })
+gsap.from(".page4 ",{
+    y:100,
+    duration:1,
+    stagger:0.2,
+    scrollTrigger:{
+      trigger:'.page4  ',
+      scroller:'#main',
+      // markers:true,
+      start:"50% 90%",
+      end:"50%  90%",
+      scrub:2
+    }
+})
 
 
 // swiper
@@ -260,6 +270,29 @@ tl1.to(".loader",{
 loader()
 
 // page 5 amination
+
+let tl2 = gsap.timeline({
+  scrollTrigger:{
+    trigger:".movecrl",
+    scroller:"#main",
+    start: "50% 90%",
+    end:"50% 90%",
+    scrub:4
+  }
+})
+tl2.to(".movecrl",{
+  y:10,
+  x:80,
+
+},"anm")
+tl2.to(".movecrl",{
+  y:20,
+  x:100,
+},"anm")
+tl2.to(".movecrl",{
+  y:22,
+  x:105,
+},"anm")
 
 
 // page7 animation
